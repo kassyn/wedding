@@ -80,6 +80,119 @@ body {
 }
 
 
+
+/* Animation
+---------------------------------- */
+
+/* -- name first */
+@keyframes nameFirst {
+
+	from {
+		opacity: 0;
+		transform: translate3d( -100px, 0, 0 );
+	}
+
+	to {
+		opacity: 1;
+		transform: translate3d( 0, 0, 0 );
+	}
+}
+
+@-webkit-keyframes nameFirst {
+
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d( -100px, 0, 0 );
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: translate3d( 0, 0, 0 );		
+	}
+}
+
+/* -- name last */
+@keyframes nameLast {
+
+	from {
+		opacity: 0;
+		transform: translateX( 100px );
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX( 0 );		
+	}
+}
+
+@-webkit-keyframes nameLast {
+
+	from {
+		opacity: 0;
+		-webkit-transform: translateX( 100px );
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: translateX( 0 );	
+	}
+}
+
+/* -- and */
+@keyframes and {
+
+	from {
+		opacity: 0;
+		transform: scale(0);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@-webkit-keyframes and {
+
+	from {
+		opacity: 0;
+		-webkit-transform: scale(0);
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+	}
+}
+
+/* -- button */
+@keyframes kbutton {
+
+	from {
+		opacity: 0;
+		transform: translate3d( 0, 100px, 0 );
+	}
+
+	to {
+		opacity: 1;
+		transform: translate3d( 0 );
+	}
+}
+
+@-webkit-keyframes kbutton {
+
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d( 0, 100px, 0 );
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: translate3d( 0, 0, 0 );
+	}
+}
+
+
 /* Title
 ---------------------------------- */
 .title-section {
@@ -213,10 +326,13 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-	background: #fb30e9;
+	background-image: -moz-linear-gradient( 125deg, rgb(255,0,246) 0%, rgb(243,16,80) 100%);
+	background-image: -ms-linear-gradient( 125deg, rgb(255,0,246) 0%, rgb(243,16,80) 100%);
+	background-image: -webkit-linear-gradient( 125deg, rgb(255,0,246) 0%, rgb(243,16,80) 100%);
 	box-shadow: 0 4px 0 0 rgba( 0, 0, 0, .5 );
 	color: #fff;
 	cursor: pointer;
+	font-size: 14px;
 	font-weight: bold;
 	text-transform: uppercase;
 	width: 100%;
@@ -239,6 +355,7 @@ input[type="submit"] {
 	-webkit-transform: translate3d( -50%, -50%, 0 );
 	left: 50%;
 	position: absolute;
+	min-height: 370px;
 	top: 50%;
 }
 
@@ -274,10 +391,14 @@ input[type="submit"] {
 }
 
 .names .name:first-child {
+	animation: nameFirst .8s;
+	-webkit-animation: nameFirst .8s;
 	text-align: right;
 }
 
 .names .name:last-child {
+	animation: nameLast .8s;
+	-webkit-animation: nameLast .8s;
 	text-align: left;
 }
 
@@ -288,6 +409,8 @@ input[type="submit"] {
 }
 
 .and {
+	animation: and .8s;
+	-webkit-animation: and .8s;
 	bottom: 30px;
 	font-size: 115px;
 	font-weight: bold;
@@ -296,6 +419,10 @@ input[type="submit"] {
 }
 
 .btn-confirm {
+	animation: kbutton .8s .5s backwards;
+	-webkit-animation: kbutton .8s .5s backwards;
+	transition: .2s;
+	-webkit-transition: .2s;
 	background: #fff;
 	border-radius: 5px;
 	box-shadow: 0 4px 0 0 rgba( 0, 0, 0, .5 );
@@ -308,6 +435,10 @@ input[type="submit"] {
 	padding: 20px 30px;
 	text-decoration: none;
 	text-transform: uppercase;
+}
+
+.btn-confirm:hover {
+	transform: scale( 1.05 );
 }
 
 
@@ -328,9 +459,12 @@ input[type="submit"] {
 	text-decoration: none;
 }
 
-.navigation a:hover,
-.navigation .active a {
+.navigation a:hover {
 	background: #131313;
+}
+
+.navigation .active a {
+	background: #0E0E0E;
 }
 
 .navigation a:before {
@@ -369,18 +503,24 @@ input[type="submit"] {
 
 #photos .collumn {
 	float: left;
-	width: 470px;
+	width: 48.4%;
 }
 
-#photos .collumn:first-child,
+#photos .collumn:first-child {
+	margin-right: 3%;
+}
+
 #photos .collumn img:nth-child(3) {
-	margin-right: 30px;
+	margin-right: 6%;
 }
 
 #photos img {
 	border-radius: 5px;
+	display: block;
 	float: left;
+	height: auto;
 	margin-bottom: 30px;
+	max-width: 100%;
 }
 
 
@@ -417,10 +557,6 @@ input[type="submit"] {
 }
 
 .maps .box-info {
-	background-image: -moz-linear-gradient( 125deg, rgb(255,0,246) 0%, rgb(243,16,80) 100%);
-	background-image: -webkit-linear-gradient( 125deg, rgb(255,0,246) 0%, rgb(243,16,80) 100%);
-	background-image: -ms-linear-gradient( 125deg, rgb(255,0,246) 0%, rgb(243,16,80) 100%);
-	border-radius: 5px;
 	height: 300px;
 	left: 0;
 	line-height: 1.4;
@@ -431,6 +567,33 @@ input[type="submit"] {
 	width: 300px;
 }
 
+.maps .box-info:before {
+	background-image: -moz-linear-gradient( 125deg, rgb(255,0,246) 0%, rgb(243,16,80) 100%);
+	background-image: -ms-linear-gradient( 125deg, rgb(255,0,246) 0%, rgb(243,16,80) 100%);
+	background-image: -webkit-linear-gradient( 125deg, rgb(255,0,246) 0%, rgb(243,16,80) 100%);
+	border-radius: 5px;
+	bottom: 0;	
+	content: "";
+	left: 0;
+	opacity: .8;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.maps .title {
+	border-bottom: 1px solid rgba( 255, 255, 255, .2 );
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+	text-transform: uppercase;
+}
+
+.maps .info {
+	position: relative;
+	z-index: 1;
+}
 
 
 /* Gifts
@@ -468,22 +631,12 @@ input[type="submit"] {
 	position: relative;
 	height: 100vh;
 }
-/*
-#confirm:before {
-	background: red;	
-	border-radius: 100%;
-	position: absolute;
-	content: "";
-	height: 20px;
-	margin-left: -10px;
-	left: 50%;
-	top: 0;
-	width: 20px;
-}
-*/
-#confirm .btn-confirm-footer {
+
+.btn-confirm-footer {
 	transform: translate3d( -50%, -50%, 0 );
 	-webkit-transform: translate3d( -50%, -50%, 0 );
+	transition: .3s;
+	-webkit-transition: .3s;
 	border-radius: 100%;
 	border: 5px solid #f3369a;
 	color: #f3369a;
@@ -498,19 +651,19 @@ input[type="submit"] {
 	width: 250px;
 }
 
-#confirm .btn-confirm-footer strong {
+.btn-confirm-footer:hover {
+	transform: translate3d( -50%, -50%, 0 ) scale( .95 );
+	box-shadow: 0 0 30px 0 #f3369a, 
+				0 0 20px 0 #f3369a inset;
+	text-shadow: 0 5px 3px #fff;
+}
+
+.btn-confirm-footer:active {
+	transform: translate3d( -50%, -50%, 0 ) scale( .9 );
+}
+
+.btn-confirm-footer strong {
 	display: block;
 	font-size: 30px;
 	font-weight: bold;
 }
-/*
-#confirm .btn-confirm-footer:before {
-	background: #fff;
-	bottom: 100%;
-	content: "";
-	height: 100%;
-	left: 50%;
-	position: absolute;
-	top: 0;
-	width: 1px;
-}*/
