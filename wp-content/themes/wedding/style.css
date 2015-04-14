@@ -6,3 +6,511 @@
   Description: Wedding website, you can stay to use and let your moment immortalized.
   Version: 1.0
 */
+
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+iframe {
+	border: none;
+	width: 100%;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
+
+/* Title
+---------------------------------- */
+.title-section {
+	color: #909090;
+	display: inline-block;
+	font-size: 48px;
+	margin-bottom: 90px;
+	position: relative;
+	text-transform: uppercase;
+}
+
+.title-section:before,
+.title-section:after {
+	background: url( "images/detail.png" ) no-repeat;
+	content: "";
+	height: 57px;
+	position: absolute;
+	top: -5px;
+	width: 134px;
+}
+
+.title-section:before {
+	right: 105%;
+}
+
+.title-section:after {
+	background-position: -135px 0;
+	left: 105%;
+}
+
+/* Grid
+---------------------------------- */
+#wrapper {
+	background: #eaeaea;
+	text-align: center;
+}
+
+.active-form #sidebar {
+	left: 0;
+}
+
+.container {
+	margin: 0 auto;
+	width: 970px;
+}
+
+#sidebar {
+	transition: left .5s;
+	-webkit-transition: left .5s;
+	background: #1d1d1d;
+	height: 100%;
+	left: -300px;
+	position: fixed;
+	top: 0;
+	width: 400px;
+	z-index: 2;
+}
+
+#sidebar .navigation,
+#sidebar .form {
+	float: left;
+}
+
+#sidebar .navigation {
+	width: 100px;
+}
+
+#sidebar .form {
+	background: #0e0e0e;
+	height: inherit;
+	padding: 30px;
+	width: 300px;
+}
+
+#content {
+	font-size: 16px;
+	margin-left: 100px;
+}
+
+#photos,
+#ceremony,
+#gifts {
+	padding: 90px 0;
+}
+
+
+
+/* Form
+---------------------------------- */
+.form li {
+	color: #5d5d5d;
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+.field-select label,
+.field-select select {
+	display: inline-block;
+	margin-right: -4px;
+}
+
+.field-select label {
+	width: 80%;
+}
+
+.field-select select {
+	height: 46px;
+	padding: 0 5px;
+	text-align: center;
+	width: 20%;
+}
+
+.field-radio label {
+	margin-right: -4px;
+	display: inline-block;
+	width: 50%;
+}
+
+input[type="text"],
+select,
+input[type="submit"] {
+	background: #eaeaea;
+	border-radius: 5px;
+	border: none;
+	padding: 15px;
+}
+
+input[type="text"] {
+	margin-top: 10px;
+	width: 100%;	
+}
+
+input[type="submit"] {
+	background: #fb30e9;
+	box-shadow: 0 4px 0 0 rgba( 0, 0, 0, .5 );
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+
+
+/* Top
+---------------------------------- */
+#top {
+	background: url( "images/background.png" ) no-repeat right;
+	background-size: cover;
+	color: #fff;
+	height: 100vh;
+	position: relative;
+}
+
+#top .container {
+	transform: translate3d( -50%, -50%, 0 );
+	-webkit-transform: translate3d( -50%, -50%, 0 );
+	left: 50%;
+	position: absolute;
+	top: 50%;
+}
+
+.name,
+.and {
+	display: inline-block;
+}
+
+.name {
+	color: #fff;
+	position: relative;
+	width: 300px;
+}
+
+.name p {
+	line-height: 1.2;
+}
+
+.name strong {
+	display: inline-block;
+	font-size: 60px;
+	margin-bottom: 15px;
+}
+
+.name:before {
+	content: "";
+	background: url( "images/sprite.png" ) no-repeat 0 0;
+	height: 180px;
+	position: absolute;
+	top: -40px;
+	right: 75%;
+	width: 56px;
+}
+
+.names .name:first-child {
+	text-align: right;
+}
+
+.names .name:last-child {
+	text-align: left;
+}
+
+.name:last-child:before {
+	background-position: -56px 0;
+	left: 75%;
+	right: auto;
+}
+
+.and {
+	bottom: 30px;
+	font-size: 115px;
+	font-weight: bold;
+	position: relative;
+	width: 150px;
+}
+
+.btn-confirm {
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 4px 0 0 rgba( 0, 0, 0, .5 );
+	color: #909090;
+	display: inline-block;
+	font-size: 20px;
+	line-height: 1.4;
+	margin-top: 15%;
+	max-width: 250px;
+	padding: 20px 30px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+
+
+/* Navigation
+---------------------------------- */
+
+.navigation a {
+	transition: background .2s;
+	-webkit-transition: background .2s;
+	border-bottom: 1px solid #1a1a1a;
+	color: #909090;
+	display: block;
+	font-size: 12px;
+	height: 110px;
+	padding: 25px 0 0;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.navigation a:hover,
+.navigation .active a {
+	background: #131313;
+}
+
+.navigation a:before {
+	background: url( "images/sprite.png" );
+	content: "";
+	display: block;
+	margin: 0 auto 5px;
+	height: 40px;
+	width: 40px;
+}
+
+.navigation .grooms a:before {
+	background-position: -40px bottom;
+}
+
+.navigation .maps a:before {
+	background-position: -80px bottom;
+}
+
+.navigation .presents a:before {
+	background-position: -120px bottom;
+}
+
+.navigation .confirm a:before {
+	background-position: 0 bottom;
+}
+
+
+/* Photos
+---------------------------------- */
+
+#photos .container,
+#photos .collumn {
+	overflow: hidden;
+}
+
+#photos .collumn {
+	float: left;
+	width: 470px;
+}
+
+#photos .collumn:first-child,
+#photos .collumn img:nth-child(3) {
+	margin-right: 30px;
+}
+
+#photos img {
+	border-radius: 5px;
+	float: left;
+	margin-bottom: 30px;
+}
+
+
+
+/* Ceremony
+---------------------------------- */
+#ceremony {
+	background: #fff;
+	position: relative;
+}
+
+#ceremony:before,
+#ceremony:after {
+	background: url( "images/background-maps.png" ) repeat-x 0 -48px;
+	content: "";
+	height: 48px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+}
+
+#ceremony:before {
+	bottom: 100%;
+}
+
+#ceremony:after {
+	background-position: 0 0;
+	top: 100%;
+}
+
+.maps .container {
+	color: #fff;
+	position: relative;
+}
+
+.maps .box-info {
+	background-image: -moz-linear-gradient( 125deg, rgb(255,0,246) 0%, rgb(243,16,80) 100%);
+	background-image: -webkit-linear-gradient( 125deg, rgb(255,0,246) 0%, rgb(243,16,80) 100%);
+	background-image: -ms-linear-gradient( 125deg, rgb(255,0,246) 0%, rgb(243,16,80) 100%);
+	border-radius: 5px;
+	height: 300px;
+	left: 0;
+	line-height: 1.4;
+	padding: 30px;
+	position: absolute;
+	text-align: left;
+	top: 75px;
+	width: 300px;
+}
+
+
+
+/* Gifts
+---------------------------------- */
+
+.list-store {
+	font-size: 0;
+	margin-top: 50px;
+}
+
+.store {
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 4px 0 0 rgba( 0, 0, 0, .1 );
+	display: inline-block;
+	height: 150px;
+	line-height: 150px;
+	margin-left: 30px;
+	min-width: 290px;
+	text-align: center;
+}
+
+.store:first-child {
+	margin-left: 0;
+}
+
+
+
+/* Confirm
+---------------------------------- */
+
+#confirm {
+	background: url( "images/background-footer.png" ) no-repeat;
+	background-size: cover;
+	position: relative;
+	height: 100vh;
+}
+/*
+#confirm:before {
+	background: red;	
+	border-radius: 100%;
+	position: absolute;
+	content: "";
+	height: 20px;
+	margin-left: -10px;
+	left: 50%;
+	top: 0;
+	width: 20px;
+}
+*/
+#confirm .btn-confirm-footer {
+	transform: translate3d( -50%, -50%, 0 );
+	-webkit-transform: translate3d( -50%, -50%, 0 );
+	border-radius: 100%;
+	border: 5px solid #f3369a;
+	color: #f3369a;
+	font-size: 22px;
+	height: 250px;
+	left: 50%;
+	padding-top: 100px;
+	position: absolute;
+	text-decoration: none;
+	text-transform: uppercase;
+	top: 50%;
+	width: 250px;
+}
+
+#confirm .btn-confirm-footer strong {
+	display: block;
+	font-size: 30px;
+	font-weight: bold;
+}
+/*
+#confirm .btn-confirm-footer:before {
+	background: #fff;
+	bottom: 100%;
+	content: "";
+	height: 100%;
+	left: 50%;
+	position: absolute;
+	top: 0;
+	width: 1px;
+}*/
