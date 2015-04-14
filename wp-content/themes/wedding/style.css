@@ -391,14 +391,14 @@ input[type="submit"] {
 }
 
 .names .name:first-child {
-	animation: nameFirst .8s;
-	-webkit-animation: nameFirst .8s;
+	animation: nameFirst .8s 1s backwards;
+	-webkit-animation: nameFirst .8s 1s backwards;
 	text-align: right;
 }
 
 .names .name:last-child {
-	animation: nameLast .8s;
-	-webkit-animation: nameLast .8s;
+	animation: nameLast .8s 1s backwards;
+	-webkit-animation: nameLast .8s 1s backwards;
 	text-align: left;
 }
 
@@ -409,8 +409,8 @@ input[type="submit"] {
 }
 
 .and {
-	animation: and .8s;
-	-webkit-animation: and .8s;
+	animation: and .8s 1s backwards;
+	-webkit-animation: and .8s 1s backwards;
 	bottom: 30px;
 	font-size: 115px;
 	font-weight: bold;
@@ -419,8 +419,8 @@ input[type="submit"] {
 }
 
 .btn-confirm {
-	animation: kbutton .8s .5s backwards;
-	-webkit-animation: kbutton .8s .5s backwards;
+	animation: kbutton .8s 1.5s backwards;
+	-webkit-animation: kbutton .8s 1.5s backwards;
 	transition: .2s;
 	-webkit-transition: .2s;
 	background: #fff;
