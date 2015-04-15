@@ -4,18 +4,18 @@
 	<div class="container">
 		<div class="names">
 			<div class="name">
-				<strong>Accacio</strong>
-				<p>Lorem ipsum dolor sit.</p>
-				<p>Lorem ipsum dolor sit.</p>
+				<strong>Accácio</strong>
+				<p>Carla Valeria Jasson</p>
+				<p>Vital Accácio Franklin</p>
 			</div>
 			<div class="and">&</div>
 			<div class="name">
 				<strong>Natália</strong>
-				<p>Lorem ipsum dolor sit.</p>
-				<p>Lorem ipsum dolor sit.</p>
-			</div>					
+				<p>Mônica Malta</p>
+				<p>Pedro Malta</p>
+			</div>
 		</div>
 
-		<a href="" title="" class="btn-confirm">Confirmar Presença</a>
-	</div>				
+		<a data-action="confirm" href="#" title="confirmar presença" class="btn-confirm">Confirmar Presença</a>
+	</div>
 </div>
