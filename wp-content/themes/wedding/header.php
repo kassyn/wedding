@@ -15,6 +15,6 @@
 	<link rel="stylesheet" href="<?php echo w_get_stylesheet_uri(); ?>">
 	<?php wp_head(); ?>
 </head>
-<body>
+<body data-route="home">
 	
 	<div id="wrapper" class="active-for">
