@@ -1,6 +1,6 @@
 <?php if ( ! function_exists( 'add_action' ) ) exit; ?>
 
-<section id="photos">
+<section id="os-noivos" class="photos">
 	<h2 class="title-section">Os Noivos</h2>
 	<div class="container">
 		<div class="collumn">

@@ -30,10 +30,18 @@
 	</div>
 	<nav class="navigation">
 		<ul>
-			<li class="grooms"><a href="" title="">Os noivos</a></li>
-			<li class="maps"><a href="" title="">Cerimônia</a></li>
-			<li class="presents active"><a href="" title="">Presentes</a></li>
-			<li class="confirm"><a href="" title="">Confirmar</a></li>
+			<li class="grooms">
+				<a href="#os-noivos" title="os noivos">Os noivos</a>
+			</li>
+			<li class="maps">
+				<a href="#cerimonia" title="cerimônia">Cerimônia</a>
+			</li>
+			<li class="presents active">
+				<a href="#presentes" title="presentes">Presentes</a>
+			</li>
+			<li class="confirm">
+				<a href="#confirmar" title="confirmar">Confirmar</a>
+			</li>
 		</ul>
 	</nav>
 </aside>

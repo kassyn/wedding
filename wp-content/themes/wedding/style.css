@@ -272,9 +272,9 @@ body {
 	margin-left: 100px;
 }
 
-#photos,
-#ceremony,
-#gifts {
+.photos,
+.ceremony,
+.gifts {
 	padding: 90px 0;
 }
 
@@ -496,25 +496,25 @@ input[type="submit"] {
 /* Photos
 ---------------------------------- */
 
-#photos .container,
-#photos .collumn {
+.photos .container,
+.photos .collumn {
 	overflow: hidden;
 }
 
-#photos .collumn {
+.photos .collumn {
 	float: left;
 	width: 48.4%;
 }
 
-#photos .collumn:first-child {
+.photos .collumn:first-child {
 	margin-right: 3%;
 }
 
-#photos .collumn img:nth-child(3) {
+.photos .collumn img:nth-child(3) {
 	margin-right: 6%;
 }
 
-#photos img {
+.photos img {
 	border-radius: 5px;
 	display: block;
 	float: left;
@@ -527,13 +527,13 @@ input[type="submit"] {
 
 /* Ceremony
 ---------------------------------- */
-#ceremony {
+.ceremony {
 	background: #fff;
 	position: relative;
 }
 
-#ceremony:before,
-#ceremony:after {
+.ceremony:before,
+.ceremony:after {
 	background: url( "assets/images/background-maps.png" ) repeat-x 0 -48px;
 	content: "";
 	height: 48px;
@@ -542,11 +542,11 @@ input[type="submit"] {
 	width: 100%;
 }
 
-#ceremony:before {
+.ceremony:before {
 	bottom: 100%;
 }
 
-#ceremony:after {
+.ceremony:after {
 	background-position: 0 0;
 	top: 100%;
 }
@@ -625,7 +625,7 @@ input[type="submit"] {
 /* Confirm
 ---------------------------------- */
 
-#confirm {
+.confirm-presence {
 	background: url( "assets/images/background-footer.png" ) no-repeat;
 	background-size: cover;
 	position: relative;

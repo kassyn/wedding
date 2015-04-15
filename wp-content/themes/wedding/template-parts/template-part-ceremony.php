@@ -1,6 +1,6 @@
 <?php if ( ! function_exists( 'add_action' ) ) exit; ?>
 
-<section id="ceremony">
+<section id="cerimonia" class="ceremony">
 	<h2 class="title-section">Cerimônia</h2>
 
 	<div class="maps">

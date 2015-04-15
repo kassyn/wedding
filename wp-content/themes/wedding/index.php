@@ -20,8 +20,8 @@ get_header();
 
 		<?php get_template_part( 'template-parts/template-part', 'gifts' ); ?>		
 
-		<section id="confirm">
-			<a class="btn-confirm-footer" href="" title="">
+		<section id="confirmar" class="confirm-presence">
+			<a data-action="confirm" class="btn-confirm-footer" href="#" title="confirmar presença">
 				confirmar <strong>presença</strong>
 			</a>
 		</section>

@@ -1,6 +1,6 @@
 <?php if ( ! function_exists( 'add_action' ) ) exit; ?>
 
-<section id="gifts" class="container">
+<section id="presentes" class="container gifts">
 	<h2 class="title-section">Lista de Presentes</h2>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, qui autem voluptate eos officia eum aliquid voluptas perferendis, sit consequuntur.</p>
 	<div class="list-store">
