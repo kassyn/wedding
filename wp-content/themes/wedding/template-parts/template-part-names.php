@@ -11,8 +11,8 @@
 			<div class="and">&</div>
 			<div class="name">
 				<strong>Natália</strong>
-				<p>Mônica Malta</p>
-				<p>Pedro Malta</p>
+				<p>Mônica Dias de Oliveira Malta</p>
+				<p>Geraldo Pedro Malta</p>
 			</div>
 		</div>
 
