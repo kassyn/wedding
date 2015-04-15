@@ -2,6 +2,8 @@
 /*
  * Generic functions in theme
  */
+define( 'W_TEMPLATE_URL', get_stylesheet_directory_uri() );
+
 function w_get_stylesheet_uri()
 {
 	return get_stylesheet_uri() . '?v=' . filemtime( get_stylesheet_directory()  . '/style.css' );
@@ -51,6 +53,11 @@ function w_remove_meta_tags()
 
 	// Remove all tags contains in $meta_tags
 	array_map( 'remove_action', $arr_hook, $meta_tags );
+}
+
+function w_the_image( $name )
+{
+	echo W_TEMPLATE_URL . "/assets/images/{$name}";
 }
 
 /*
