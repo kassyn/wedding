@@ -12,4 +12,4 @@ wp-content/blogs.dir/
 wp-content/uploads/
 node_modules/
 .sass-cache/
-
+deploy.sh
