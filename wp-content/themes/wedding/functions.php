@@ -3,10 +3,11 @@
  * Generic functions in theme
  */
 define( 'W_TEMPLATE_URL', get_stylesheet_directory_uri() );
+define( 'W_TEMPLATE_DIRECTORY', get_stylesheet_directory() );
 
 function w_get_stylesheet_uri()
 {
-	return get_stylesheet_uri() . '?v=' . filemtime( get_stylesheet_directory()  . '/style.css' );
+	return get_stylesheet_uri() . '?v=' . filemtime( W_TEMPLATE_DIRECTORY . '/style.css' );
 }
 
 function w_the_page_title()
@@ -60,6 +61,25 @@ function w_the_image( $name )
 	echo W_TEMPLATE_URL . "/assets/images/{$name}";
 }
 
+function w_site_enqueue_script()
+{
+	wp_enqueue_script(
+		'resuta-front',
+		W_TEMPLATE_URL . '/assets/javascripts/built.js',
+		null,
+		filemtime( W_TEMPLATE_DIRECTORY . '/assets/javascripts/built.js' ),
+		true
+	);
+
+	wp_localize_script(
+		'resuta-front', 
+		'SiteGlobalVars',
+		array(
+			'urlAjax' => admin_url( 'admin-ajax.php' ),
+		)
+	);
+}
+
 /*
  * After setuo theme action
  * Remove defauls meta tags, generator and show admin bar
@@ -68,6 +88,9 @@ function w_after_setup_theme()
 {
 	w_remove_meta_tags();
 	add_action( 'show_admin_bar', '__return_false' );
+
+	//hooks scripts
+	add_action( 'wp_enqueue_scripts', 'w_site_enqueue_script' );
 }
 
 add_action( 'after_setup_theme', 'w_after_setup_theme' );

@@ -1,11 +1,11 @@
 {
-  "name": "resuta_ssvp",
+  "name": "wedding",
   "version": "1.0.0",
-  "description": "Project SSVP",
+  "description": "project for my wedding",
   "webroot" : "assets/javascripts",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/kassyn/wedding.git"
   },
   "main": "index.js",
   "scripts": {

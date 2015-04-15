@@ -36,7 +36,7 @@
 			<li class="maps">
 				<a href="#cerimonia" title="cerimônia">Cerimônia</a>
 			</li>
-			<li class="presents active">
+			<li class="presents">
 				<a href="#presentes" title="presentes">Presentes</a>
 			</li>
 			<li class="confirm">
