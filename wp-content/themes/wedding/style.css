@@ -206,7 +206,7 @@ body {
 
 .title-section:before,
 .title-section:after {
-	background: url( "images/detail.png" ) no-repeat;
+	background: url( "assets/images/detail.png" ) no-repeat;
 	content: "";
 	height: 57px;
 	position: absolute;
@@ -343,7 +343,7 @@ input[type="submit"] {
 /* Top
 ---------------------------------- */
 #top {
-	background: url( "images/background.png" ) no-repeat right;
+	background: url( "assets/images/background.png" ) no-repeat right;
 	background-size: cover;
 	color: #fff;
 	height: 100vh;
@@ -382,7 +382,7 @@ input[type="submit"] {
 
 .name:before {
 	content: "";
-	background: url( "images/sprite.png" ) no-repeat 0 0;
+	background: url( "assets/images/sprite.png" ) no-repeat 0 0;
 	height: 180px;
 	position: absolute;
 	top: -40px;
@@ -468,7 +468,7 @@ input[type="submit"] {
 }
 
 .navigation a:before {
-	background: url( "images/sprite.png" );
+	background: url( "assets/images/sprite.png" );
 	content: "";
 	display: block;
 	margin: 0 auto 5px;
@@ -534,7 +534,7 @@ input[type="submit"] {
 
 #ceremony:before,
 #ceremony:after {
-	background: url( "images/background-maps.png" ) repeat-x 0 -48px;
+	background: url( "assets/images/background-maps.png" ) repeat-x 0 -48px;
 	content: "";
 	height: 48px;
 	left: 0;
@@ -626,7 +626,7 @@ input[type="submit"] {
 ---------------------------------- */
 
 #confirm {
-	background: url( "images/background-footer.png" ) no-repeat;
+	background: url( "assets/images/background-footer.png" ) no-repeat;
 	background-size: cover;
 	position: relative;
 	height: 100vh;
