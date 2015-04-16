@@ -27,11 +27,12 @@
 				<li><input type="submit" value="Confirmar Presença"></li>
 			</ul>
 		</form>
-	</div>
+	</div>	
+	
 	<nav class="navigation">
 		<ul>
 			<li class="date">
-				<a href="#top" title="Accácio e Natália">faltam <span>27</span></a>
+				<a href="#top" title="Accácio e Natália">faltam <span><?php w_the_last_days(); ?></span></a>
 			</li>
 			<li class="grooms">
 				<a href="#os-noivos" title="os noivos">Os noivos</a>

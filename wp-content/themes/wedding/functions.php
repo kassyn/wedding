@@ -80,6 +80,14 @@ function w_site_enqueue_script()
 	);
 }
 
+function w_the_last_days()
+{
+	$date = strtotime( '2015-05-09' );
+	$now  = date_i18n( 'U' );
+
+	echo date_i18n( 'd', ( $date - $now ) );
+}
+
 /*
  * After setuo theme action
  * Remove defauls meta tags, generator and show admin bar
