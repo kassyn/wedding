@@ -248,7 +248,7 @@ body {
 	position: fixed;
 	top: 0;
 	width: 400px;
-	z-index: 2;
+	z-index: 11;
 }
 
 #sidebar .navigation,
@@ -492,6 +492,20 @@ input[type="submit"] {
 	background-position: 0 bottom;
 }
 
+.navigation .date a {
+	background: #000;
+}
+
+.navigation .date a:before {
+	display: none;
+}
+
+.navigation .date span {
+	display: block;
+	font-size: 40px;
+	margin-top: 5px;
+}
+
 
 /* Photos
 ---------------------------------- */
@@ -604,9 +618,20 @@ input[type="submit"] {
 /* Gifts
 ---------------------------------- */
 
+.gifts p {
+	color: #909090;
+	line-height: 1.2;
+}
+
 .list-store {
 	font-size: 0;
 	margin-top: 50px;
+}
+
+.store img,
+.store .btn-go {
+	transition: transform .6s;
+	-webkit-transition: transform .6s;
 }
 
 .store {
@@ -615,14 +640,35 @@ input[type="submit"] {
 	box-shadow: 0 4px 0 0 rgba( 0, 0, 0, .1 );
 	display: inline-block;
 	height: 150px;
-	line-height: 150px;
 	margin-left: 30px;
 	min-width: 290px;
+	overflow: hidden;
 	text-align: center;
+	text-decoration: none;
 }
 
 .store:first-child {
 	margin-left: 0;
+}
+
+.store:hover img {
+	transform: translate3d( 0, -20px, 0 );
+	-webkit-transform: translate3d( 0, -20px, 0 );
+}
+.store:hover .btn-go {
+	transform: translate3d( 0, -40px, 0 );	
+	-webkit-transform: translate3d( 0, -40px, 0 );	
+}
+
+.btn-go {
+	border-top: 1px solid #ddd;
+	color: #909090;
+	display: block;
+	font-size: 15px;
+	padding: 10px;
+	margin: 0 40px;
+	text-align: center;
+	text-transform: uppercase;
 }
 
 
