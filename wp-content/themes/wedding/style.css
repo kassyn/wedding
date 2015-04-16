@@ -565,6 +565,7 @@ input[type="submit"] {
 	text-align: left;
 	top: 75px;
 	width: 300px;
+	z-index: 10;
 }
 
 .maps .box-info:before {
@@ -593,6 +594,10 @@ input[type="submit"] {
 .maps .info {
 	position: relative;
 	z-index: 1;
+}
+
+.maps .info strong {
+	font-weight: bold;
 }
 
 
