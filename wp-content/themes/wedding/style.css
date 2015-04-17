@@ -379,7 +379,7 @@ input[type="submit"] {
 /* Top
 ---------------------------------- */
 #top {
-	background: url( "assets/images/background.png" ) no-repeat right;
+	background: url( "assets/images/background.jpg" ) no-repeat right;
 	background-size: cover;
 	color: #fff;
 	height: 100vh;
