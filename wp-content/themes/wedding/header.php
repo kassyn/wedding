@@ -18,4 +18,4 @@
 </head>
 <body data-route="home">
 	
-	<div id="wrapper" class="active-for">
+	<div id="wrapper">

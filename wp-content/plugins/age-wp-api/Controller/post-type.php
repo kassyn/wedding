@@ -63,27 +63,6 @@ abstract class Post_Type
 		do_action( 'age_add_image_size', $args );
 	}
 
-	public function column_code_generic( $post_id )
-	{
-		echo "<strong>{$post_id}</strong>";
-	}
-
-	public function column_state_generic( $post_id )
-	{
-		$model = new Address( $post_id );
-		$state = $model->get_state_row();
-
-		echo ( $state ) ? $state['text'] : '—';
-	}
-
-	public function column_city_generic( $post_id )
-	{
-		$model = new Address( $post_id );
-		$state = $model->get_city_row();
-
-		echo ( $state ) ? $state['text'] : '—';
-	}
-
 	/**
 	 * Sets the column in admin
 	 *
@@ -151,7 +130,7 @@ abstract class Post_Type
 
 		$gender = ( $is_female ) ? 'a' : 'o';
 
-		$messages[ $this->name ] = array(
+		$messages[$this->name] = array(
 			0  => '',
 			1  => "{$label} atualizad{$gender}.",
 			2  => "Campo personalizado atualizad{$gender}.",

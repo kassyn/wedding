@@ -76,6 +76,40 @@ abstract class Post
 	private $author;
 
 	/**
+	 * menu order
+	 *
+	 * @since 1.0
+	 * @var int
+	 */
+	private $menu_order;
+
+	/**
+	 * Use in fields post has "post_" prefix
+	 *
+	 * @since 1.0
+	 * @var array
+	 */
+	private $prefix_post_fields = array(
+		'title',
+		'excerpt',
+		'content',
+		'date',
+		'date_gmt',
+		'status',
+		'author'
+	);
+
+	/**
+	 * Use in fields post has literal names
+	 *
+	 * @since 1.0
+	 * @var array
+	 */
+	private $literal_post_fields = array(
+		'menu_order',
+	);
+
+	/**
      * Constructor of the class. Instantiate and incializate it.
      *
      * @since 1.0.0
@@ -102,7 +136,7 @@ abstract class Post
 
 	public function get_the_thumbnail_url( $size = 'thumbnail' )
 	{
-		return Utils_Helper::get_thumbnail_url( get_post_thumbnail_id( $this->ID ), $size );
+		return Utils::get_thumbnail_url( get_post_thumbnail_id( $this->ID ), $size );
 	}
 
 	public function get_permalink()
@@ -117,7 +151,7 @@ abstract class Post
 			'fields'    => 'ids',
 		);
 
-		return $this->parse( Utils_Helper::get_query( $args, $defaults ) );
+		return $this->parse( Utils::get_query( $args, $defaults ) );
 	}
 
 	/**
@@ -132,8 +166,13 @@ abstract class Post
 		if ( isset( $this->$prop_name ) )
 			return $this->$prop_name;
 
-		if ( in_array( $prop_name, array( 'title', 'excerpt', 'content' ) ) ) :
+		if ( in_array( $prop_name, $this->prefix_post_fields ) ) :
 			$this->$prop_name = get_post_field( "post_{$prop_name}", $this->ID );
+			return $this->$prop_name;
+		endif;
+
+		if ( in_array( $prop_name, $this->literal_post_fields ) ) :
+			$this->$prop_name = get_post_field( $prop_name, $this->ID );
 			return $this->$prop_name;
 		endif;
 

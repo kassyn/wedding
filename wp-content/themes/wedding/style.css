@@ -288,6 +288,40 @@ body {
 	text-align: left;
 }
 
+.form .error-validate {
+	box-shadow: 3px 0px 0px #F50D6E inset;
+}
+
+.form-message {
+	background: #fff;
+	line-height: 1.2;
+	padding: 10px;
+	border-radius: 5px;
+	color: #5d5d5d;
+	position: relative;
+	transition: all ease-in-out .3s;
+	-webkit-transition: all ease-in-out .3s;
+	opacity: 0;
+	transform: translate3d( 0, -13px, 0 );
+	-webkit-transform: translate3d( 0, -13px, 0 );	
+}
+
+.form-message.show {
+	opacity: 1;
+	transform: translate3d( 0, 0, 0 );
+	-webkit-transform: translate3d( 0, 0, 0 );
+}
+
+.form-message:before {
+	content: '';  
+	border-bottom: 8px solid #fff;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+	position: absolute;
+	top: -7px;
+	left: 15px;
+}
+
 .field-select label,
 .field-select select {
 	display: inline-block;
@@ -312,6 +346,7 @@ body {
 }
 
 input[type="text"],
+input[type="number"],
 select,
 input[type="submit"] {
 	background: #eaeaea;
@@ -320,7 +355,8 @@ input[type="submit"] {
 	padding: 15px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="number"] {
 	margin-top: 10px;
 	width: 100%;	
 }

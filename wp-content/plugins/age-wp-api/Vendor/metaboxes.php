@@ -25,8 +25,7 @@ class Metaboxes
 	private $_post_id;
 	private $_post;
 	private $_avoid_post_status;
-	private $_wp_editor_callback;
-	private $_domain;
+	private $_wp_editor_callback;	
 
 	/**
 	 * Constants that define if the meta_key is unique or not unique.
@@ -58,22 +57,20 @@ class Metaboxes
 	 * 				from array in a new post meta.
 	 * - title: The title for the box. An alias to the parameter title in add_meta_box function.
 	 * - context: An alias to the parameter context in add_meta_box function.
-	 * - priority: An alias to the parameter priority in add_meta_box function.
-	 * - description: Inform a string to help the user know what purpose of the metabox.
-	 * - description_position: If the description is displayed above before or after the metabox content.
+	 * - priority: An alias to the parameter priority in add_meta_box function.	 
 	 * - callback_args: An alias to the parameter callback_args in add_meta_box function.
 	 * - content: The html markup for the fields in metabox. REMEMBER: The 'name' attribute in the fields
 	 *            need to be the same passed in the meta_keys parameter to automate the saving.
 	 *
-	 * @param array $meta_box_args An array with the arguments
+	 * @param array $args An array with the arguments
 	 *
 	 * @return void
 	 *
 	 * @since 1.0
 	 */
-	public function __construct( $meta_box_args )
+	public function __construct( $args )
 	{
-		$is_args_valids = self::_is_args_valids( $meta_box_args );
+		$is_args_valids = self::_is_args_valids( $args );
 
 		if ( ! $is_args_valids )
 			return;
@@ -81,20 +78,19 @@ class Metaboxes
 		$this->_set_environment();
 
 		$defaults = array(
-			'post_type'             => 'page',
-			'context'               => 'normal',
-			'priority'              => 'low',
-			'description_position'  => 'before',
-			'description'           => null,
-			'callback_args'         => null,
-			'content_callback'	    => null,
-			'wp_editor_callback'	=> null,
-			'domain'			    => '',
+			'post_type'          => 'page',
+			'context'            => 'normal',
+			'priority'           => 'low',
+			'nonce_name'         => "_age-wp-nonce-name-{$args['id']}",
+			'nonce_action'       => "_age-wp-nonce-action-{$args['id']}",
+			'callback_args'      => null,
+			'content_callback'   => null,
+			'wp_editor_callback' => null,
 		);
 
-		$meta_box_args = wp_parse_args( $meta_box_args, $defaults );
+		$args = wp_parse_args( $args, $defaults );
 
-		extract( $meta_box_args, EXTR_SKIP );
+		extract( $args, EXTR_SKIP );
 
 		$this->_meta_keys          = $meta_keys;
 		$this->_id                 = $id;
@@ -105,7 +101,8 @@ class Metaboxes
 		$this->_content_callback   = $content_callback;
 		$this->_callback_args      = $callback_args;
 		$this->_wp_editor_callback = $wp_editor_callback;
-		$this->_domain             = $domain;
+		$this->_nonce_name         = $nonce_name;
+		$this->_nonce_action       = $nonce_action;
 
 		// Creates the metabox in WordPress
 		$this->_set_control_hook_metaboxes();
@@ -156,8 +153,7 @@ class Metaboxes
 	/**
 	 * Metabox content
 	 *
-	 * Generates the html content for the metabox. Already implements an nonce
-	 * field to insurance. Print the description for the metabox, if it was exists.
+	 * Generates the html content for the metabox. Already implements an nonce.
 	 *
 	 * @return void
 	 *
@@ -166,7 +162,7 @@ class Metaboxes
 	public function content( $post )
 	{
 		if ( $this->_content_callback && is_callable( $this->_content_callback ) ) :
-			call_user_func( $this->_content_callback, $post, $this->_domain );
+			call_user_func( $this->_content_callback, $post );
 		endif;
 
 		wp_nonce_field( $this->_nonce_action, $this->_nonce_name );
@@ -253,21 +249,6 @@ class Metaboxes
 		add_post_meta( $this->_post_id, $meta_key, $value );
 	}
 
-	public function set_nonce( $nonce_data = array() )
-	{
-		$defaults = array(
-			'nonce_name'   => '_age-wp-metaboxes-name',
-			'nonce_action' => '_age-wp-metaboxes-action',
-		);
-
-		$nonce_data = wp_parse_args( $nonce_data, $defaults );
-
-		extract( $nonce_data, EXTR_SKIP );
-
-		$this->_nonce_name   = $nonce_name;
-		$this->_nonce_action = $nonce_action;
-	}
-
 	private function _is_save_post_valid_for_metaboxes()
 	{
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
@@ -291,12 +272,12 @@ class Metaboxes
 		return true;
 	}
 
-	private function _is_args_valids( $meta_box_args )
+	private function _is_args_valids( $args )
 	{
-		if ( empty( $meta_box_args ) )
+		if ( empty( $args ) )
 			return false;
 
-		if ( ! is_array( $meta_box_args ) )
+		if ( ! is_array( $args ) )
 			return false;
 
 		return true;
