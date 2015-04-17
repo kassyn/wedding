@@ -18,6 +18,7 @@
 		"console" : true,
 		"Toastr" : true,
 		"wp" : true,
-		"google" : true
+		"google" : true,
+		"ga" : true
 	}
 }

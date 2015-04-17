@@ -9618,8 +9618,11 @@ return jQuery;
 		this.message
 			.text( response.message )
 			.addClass( 'show' )
-		;
-		
+		;		
+
+		//send ga
+		ga( 'send', 'event', 'confimar-presenca', this.$el.serialize() );
+
 		this.clear();
 		this.lock = false;
 	};
