@@ -14,6 +14,12 @@
 	<title><?php w_the_page_title(); ?></title>
 	<link rel="stylesheet" href="<?php echo w_get_stylesheet_uri(); ?>">
 	<link rel="shortcut icon" href="<?php w_the_image( 'favicon.png' ); ?>" type="image/x-icon" />
+	<meta property="og:locale" content="pt_BR" />	
+	<meta property="og:site_name" content="<?php w_the_page_title(); ?>" />
+	<meta property="og:title" content="<?php w_the_page_title(); ?>" />
+	<meta property="og:description" content="Confira os detalhes do casório e não esqueça de confirmar sua presença!" />
+	<meta property="og:url" content="<?php echo site_url(); ?>" />	
+	<meta property="og:image" content="<?php w_the_image( 'branding-400x400.png' ); ?>" />
 	<?php wp_head(); ?>
 </head>
 <body data-route="home">
