@@ -19,7 +19,7 @@
 	<meta property="og:title" content="<?php w_the_page_title(); ?>" />
 	<meta property="og:description" content="Confira os detalhes do casório e não esqueça de confirmar sua presença!" />
 	<meta property="og:url" content="<?php echo site_url(); ?>" />	
-	<meta property="og:image" content="<?php w_the_image( 'branding-400x400.png' ); ?>" />
+	<meta property="og:image" content="<?php w_the_image( 'share-wedding.png' ); ?>" />
 	<?php wp_head(); ?>
 </head>
 <body data-route="home">
