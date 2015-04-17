@@ -33,6 +33,14 @@ module.exports = function(grunt) {
 			}
     	},
 
+    	cssmin : {
+    		target : {
+		    	files : {
+		      		'style.css' : 'style.css'
+		    	}
+		  	}
+    	},
+
 		watch: {
 		    script : {
 		    	files : '<%= concat.site.src %>',
@@ -47,7 +55,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-concat' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 
 	grunt.registerTask( 'js', ['jshint', 'concat'] );
 	grunt.registerTask( 'jsmin', ['jshint', 'concat', 'uglify'] );
+	grunt.registerTask( 'deploy', ['jsmin', 'cssmin'] );
 };
