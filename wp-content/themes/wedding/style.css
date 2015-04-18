@@ -486,7 +486,8 @@ input[type="submit"] {
 	transition: background .2s;
 	-webkit-transition: background .2s;
 	border-bottom: 1px solid #1a1a1a;
-	color: #909090;
+	/*color: #909090;*/
+	color: #F5F4F4;
 	display: block;
 	font-size: 12px;
 	height: 110px;
@@ -539,7 +540,7 @@ input[type="submit"] {
 .navigation .date span {
 	display: block;
 	font-size: 40px;
-	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 
