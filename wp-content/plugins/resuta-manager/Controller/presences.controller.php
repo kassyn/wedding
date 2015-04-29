@@ -64,7 +64,7 @@ class Presences_Controller extends Post_Type
 		add_action( "age_{$this->name}_column_number", array( &$this, 'set_column_number' ) );
 		add_action( 'wp_ajax_set-person-registration', array( &$this, 'ajax_set_person_registration' ) );
 		add_action( 'wp_ajax_nopriv_set-person-registration', array( &$this, 'ajax_set_person_registration' ) );
-	}
+	} 
 
 	public function register_meta_boxes()
 	{
