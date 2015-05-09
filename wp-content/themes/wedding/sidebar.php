@@ -41,7 +41,7 @@
 	<nav class="navigation">
 		<ul>
 			<li class="date">
-				<a href="#top" title="Accácio e Natália">faltam <span><?php w_the_last_days(); ?></span> dias</a>
+				<a href="#top" title="Accácio e Natália">Hoje <span>\o/</span></a>
 			</li>
 			<li class="grooms">
 				<a href="#os-noivos" title="os noivos">Os noivos</a>
